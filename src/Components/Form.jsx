@@ -13,14 +13,14 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name.length < 5) {
-      setError('Name must be at least 5 characters');
+      setError('EL nombre debe tener mínimo 5 caracteres');
       setSuccessMessage('');
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      setError('Invalid email address');
+      setError('Dirección de e-mail inválido');
       setSuccessMessage('');
     } else {
       setError('');
-      setSuccessMessage(`Thank you ${formData.name}, we will contact you via email.`);
+      setSuccessMessage(`Gracias ${formData.name}, nos contactaremos contigo vía e-mail.`);
       // Optionally clear the form fields
       setFormData({ name: '', email: '' });
     }
@@ -33,7 +33,7 @@ const Form = () => {
         name="name"
         value={formData.name}
         onChange={handleChange}
-        placeholder="Name"
+        placeholder="Nombre"
       />
       <input
         type="email"
